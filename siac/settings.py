@@ -6,6 +6,11 @@ https://docs.djangoproject.com/en/1.6/topics/settings/
 
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.6/ref/settings/
+SI SE PUEDE XAVIER....
+1. CREAR UN PROYECTO PYDEV
+2. DARLE LA RUTA DEL ARCHIVO QUE SE DESCARGO
+3. PONERLE EL MISMO NOMBRE
+4. WOALA...
 """
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
