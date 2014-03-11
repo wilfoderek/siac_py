@@ -30,6 +30,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
+    'django_admin_bootstrapped.bootstrap3',
+    'django_admin_bootstrapped',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -60,8 +62,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': 'siac_devel',                                     # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
-        'USER': 'postgres',
-        'PASSWORD': 'root',
+        'USER': 'siac',
+        'PASSWORD': 'siac',
         'HOST': 'localhost',                                # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
         'PORT': '5432',                                     # Set to empty string for default.
     }
@@ -70,7 +72,7 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-ec'
 
 TIME_ZONE = 'UTC'
 
