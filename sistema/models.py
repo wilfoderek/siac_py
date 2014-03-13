@@ -60,8 +60,8 @@ class Provincia(models.Model):
     Provincias principalmente de Ecuador y se relaciona con la zonal
     """
     nombre_provincia = models.CharField(max_length=100)
-    id_pais = models.ForeignKey(Pais)
-    id_zonal = models.ForeignKey(Zonal)
+    pais = models.ForeignKey(Pais)
+    zonal = models.ForeignKey(Zonal)
 
 
 class Canton(models.Model):
@@ -69,14 +69,14 @@ class Canton(models.Model):
     Representa los cantones de las provincias del ecuador
     """
     nombre_canton = models.CharField(max_length=100)
-    id_provincia = models.ForeignKey(Provincia)
+    provincia = models.ForeignKey(Provincia)
 
 
 class Ciudad(models.Model):
     """
     Representa las ciudades del mundo
     """
-    id_canton = models.ForeignKey(Canton)
+    canton = models.ForeignKey(Canton)
     nombre_ciudad = models.CharField(max_length=200)
 
 
@@ -85,7 +85,7 @@ class Parroquia(models.Model):
     Parroquias pertenecientes a las ciudades del Ecuador
     """
     nombre_parroquia = models.CharField(max_length=300)
-    id_ciudad = models.ForeignKey(Ciudad)
+    ciudad = models.ForeignKey(Ciudad)
 
 
 class Parentesco(models.Model):
@@ -123,7 +123,7 @@ class Institucion(models.Model):
     telf1 = models.CharField(max_length=20)
     telf2 = models.CharField(max_length=20)
     direccion = models.CharField(max_length=300)
-    id_ciudad = models.ForeignKey(Ciudad)
+    ciudad = models.ForeignKey(Ciudad)
     categoria_empresa = models.ForeignKey(CategoriaInstitucion)
     tipo_institucion = models.ForeignKey(TipoInstitucion, null=True, blank=True)
 
