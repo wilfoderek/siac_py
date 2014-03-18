@@ -1,3 +1,4 @@
+# coding=utf-8
 """
 Django settings for siac project.
 
@@ -40,7 +41,16 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    #Aplicacion para realizar migraciones (Refleja las actualizaciones de los modelos en la base de datos)
+    'south',
+
+    #Aplicacion para mejorar la autenticación
+    'guardian',
+
+    #Aplicación base del SIAC
     'sistema',
+
 )
 
 MIDDLEWARE_CLASSES = (
@@ -56,6 +66,15 @@ ROOT_URLCONF = 'siac.urls'
 
 WSGI_APPLICATION = 'siac.wsgi.application'
 
+AUTHENTICATION_BACKENDS = (
+
+    # this is default
+    'django.contrib.auth.backends.ModelBackend',
+
+    'guardian.backends.ObjectPermissionBackend',
+)
+
+ANONYMOUS_USER_ID = -1
 
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
@@ -76,9 +95,9 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
-LANGUAGE_CODE = 'es-ec'
+LANGUAGE_CODE = 'es'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Bogota'
 
 USE_I18N = True
 
